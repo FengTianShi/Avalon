@@ -12,7 +12,7 @@ public class PlayerInput : MonoBehaviour
     private float movesSpeed = 10;
 
     [SerializeField]
-    private float jumpForce = 500;
+    private float jumpForce = 10;
 
     void Start()
     {

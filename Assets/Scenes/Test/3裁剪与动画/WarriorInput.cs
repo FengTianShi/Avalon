@@ -45,15 +45,12 @@ public class WarriorInput : MonoBehaviour
 
         UpdateFacing();
 
-        isGrounded = Physics2D.OverlapCapsule(capsuleCollider.bounds.center, capsuleCollider.size, CapsuleDirection2D.Vertical, 0, groundLayer);
+        CheckIsGrounded();
 
         if (isGrounded)
         {
             Run();
             Jump();
-        }
-        else
-        {
         }
 
         UpdateAnimator();
@@ -81,6 +78,11 @@ public class WarriorInput : MonoBehaviour
             facing = (int)xInput;
             transform.localScale = new Vector3(facing, 1, 1);
         }
+    }
+
+    private void CheckIsGrounded()
+    {
+        isGrounded = Physics2D.OverlapCapsule(capsuleCollider.bounds.center, capsuleCollider.size, CapsuleDirection2D.Vertical, 0, groundLayer);
     }
 
     private void UpdateAnimator()

@@ -126,10 +126,10 @@ TextureImporter:
       name: B_witch_idle_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 246
-        width: 20
-        height: 38
+        x: 0
+        y: 240
+        width: 32
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: B_witch_idle_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 198
-        width: 20
-        height: 37
+        x: 0
+        y: 192
+        width: 32
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: B_witch_idle_2
       rect:
         serializedVersion: 2
-        x: 5
-        y: 150
-        width: 20
-        height: 35
+        x: 0
+        y: 144
+        width: 32
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: B_witch_idle_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 102
-        width: 19
-        height: 36
+        x: 0
+        y: 96
+        width: 32
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: B_witch_idle_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 54
-        width: 19
-        height: 39
+        x: 0
+        y: 48
+        width: 32
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: B_witch_idle_5
       rect:
         serializedVersion: 2
-        x: 5
-        y: 6
-        width: 21
-        height: 38
+        x: 0
+        y: 0
+        width: 32
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warrior Jump
+  m_Name: Warrior Fall
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -2136189431, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
+      value: {fileID: -1097547376, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
     - time: 0.1
-      value: {fileID: -1019279863, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
+      value: {fileID: 1435020821, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
     - time: 0.2
-      value: {fileID: 458870976, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
+      value: {fileID: 2132903284, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -2136189431, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
-    - {fileID: -1019279863, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
-    - {fileID: 458870976, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
+    - {fileID: -1097547376, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
+    - {fileID: 1435020821, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
+    - {fileID: 2132903284, guid: 3d48407250cc30242b30b0d430d5883b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

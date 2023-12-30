@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class WarriorInput : MonoBehaviour
 {
+    [SerializeField]
     private Rigidbody2D rb;
 
+    [SerializeField]
     private Animator anim;
 
-    private CapsuleCollider2D capsuleCollider;
+    [SerializeField]
+    private CapsuleCollider2D bodyCollider;
+
+    [SerializeField]
+    private CapsuleCollider2D footCollider;
 
     [SerializeField]
     private float moveSpeed = 10;
@@ -35,7 +41,6 @@ public class WarriorInput : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
         groundLayer = LayerMask.GetMask("Ground");
     }
 
@@ -82,12 +87,19 @@ public class WarriorInput : MonoBehaviour
 
     private void CheckIsGrounded()
     {
-        isGrounded = Physics2D.OverlapCapsule(capsuleCollider.bounds.center, capsuleCollider.size, CapsuleDirection2D.Vertical, 0, groundLayer);
+        isGrounded = Physics2D.OverlapCapsule(
+            footCollider.bounds.center,
+            footCollider.bounds.size,
+            CapsuleDirection2D.Vertical,
+            0,
+            groundLayer
+        );
     }
 
     private void UpdateAnimator()
     {
         anim.SetBool("isMoving", isMoving);
-        anim.SetBool("isJumping", !isGrounded);
+        anim.SetBool("isGrounded", isGrounded);
+        anim.SetFloat("yVelocity", rb.velocity.y);
     }
 }

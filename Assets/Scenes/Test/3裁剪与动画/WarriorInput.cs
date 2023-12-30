@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class WarriorInput : MonoBehaviour
 {
-    [SerializeField]
     private Rigidbody2D rb;
 
-    [SerializeField]
     private Animator anim;
 
     [SerializeField]

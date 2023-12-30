@@ -61,8 +61,25 @@ public class WarriorInput : MonoBehaviour
 
     private void Run()
     {
+        Debug.Log(IsSlope());
         rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
         isMoving = rb.velocity.x != 0;
+    }
+
+    private bool IsSlope()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(
+                       bodyCollider.bounds.center,
+                       Vector2.down,
+                       bodyCollider.bounds.extents.y + 0.1f,
+                       groundLayer);
+
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.name);
+            return true;
+        }
+        return false;
     }
 
     private void Jump()

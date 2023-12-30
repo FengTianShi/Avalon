@@ -457,8 +457,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011927128, y: -0.26484394}
-  m_Size: {x: 0.75780964, y: 1.9931464}
+  m_Offset: {x: -0.011927128, y: -0.2527436}
+  m_Size: {x: 0.75780964, y: 1.9689457}
   m_Direction: 0
 --- !u!114 &330301942
 MonoBehaviour:
@@ -472,8 +472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c096fc699e5374d9d8741e61e117db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  anim: {fileID: 0}
   bodyCollider: {fileID: 330301941}
   footCollider: {fileID: 330301943}
   moveSpeed: 8
@@ -517,8 +515,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011321306, y: -1.0713748}
-  m_Size: {x: 0.499022, y: 0.5681462}
+  m_Offset: {x: -0.011321306, y: -1.0554243}
+  m_Size: {x: 0.499022, y: 0.5362451}
   m_Direction: 0
 --- !u!1 &358207540
 GameObject:
@@ -996,7 +994,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 918958105
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b33a67e152ba9874baaa29fb78a88176, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1080,7 +1078,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 918958105
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3fabfddb2f51f84419426d8376cace74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2556,7 +2554,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000d10529892d3accf35520af811930c636
+  m_ApplyToSortingLayers: 00000000d10529892d3accf35520af811930c63681244a1c15f75ac8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

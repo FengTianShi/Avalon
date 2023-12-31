@@ -398,7 +398,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5a6461e83693d124c9092280a188c87f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -479,7 +479,7 @@ MonoBehaviour:
   xInput: 0
   facing: 1
   runSpeed: 9
-  glideSpeed: 7
+  glideSpeed: 8
   jumpForce: 7
   groundLayer:
     serializedVersion: 2
@@ -490,6 +490,11 @@ MonoBehaviour:
   isOnSlope: 0
   slopeDirLeft: {x: 0, y: 0}
   slopeDirRight: {x: 0, y: 0}
+  dashDuration: 0.15
+  dashSpeed: 30
+  dashTime: 0
+  isDashing: 0
+  dashDir: {x: 0, y: 0}
 --- !u!70 &330301943
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

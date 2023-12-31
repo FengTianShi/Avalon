@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,6 +55,21 @@ public class WarriorInput : MonoBehaviour
     [SerializeField]
     Vector2 slopeDirRight;
 
+    [SerializeField]
+    private float dashDuration;
+
+    [SerializeField]
+    private float dashSpeed;
+
+    [SerializeField]
+    private float dashTime;
+
+    [SerializeField]
+    private bool isDashing;
+
+    [SerializeField]
+    Vector2 dashDir;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -80,6 +96,8 @@ public class WarriorInput : MonoBehaviour
         {
             Glide();
         }
+
+        Dash();
 
         UpdateAnimator();
     }
@@ -128,40 +146,61 @@ public class WarriorInput : MonoBehaviour
             slopeDirRight = Vector2.zero;
     }
 
-    private void Move()
+    private Vector2 GetMoveDir()
     {
-        if (xInput != 0)
-        {
-            isMovingOnGround = true;
+        Vector2 moveDir = new Vector2(xInput, 0);
 
-            if (isOnSlope)
-                MoveOnSlope();
-            else
-                rb.velocity = new Vector2(xInput * runSpeed, 0);
-        }
-        else
+        if (isOnSlope)
         {
-            rb.velocity = new Vector2(0, 0);
-            isMovingOnGround = false;
+            Vector2 slopeDir;
+            if (slopeDirLeft != Vector2.zero && slopeDirRight != Vector2.zero)
+                slopeDir = facing == 1 ? slopeDirRight : slopeDirLeft;
+            else if (slopeDirLeft != Vector2.zero)
+                slopeDir = slopeDirLeft;
+            else
+                slopeDir = slopeDirRight;
+
+            moveDir = -xInput * slopeDir;
+
+            // Slope speed adjustment
+            if (xInput != 0)
+                moveDir += new Vector2(0, -1);
         }
+
+        return moveDir.normalized;
     }
 
-    private void MoveOnSlope()
+    private void Move()
     {
-        Vector2 slopeDirection;
-        if (slopeDirLeft != Vector2.zero && slopeDirRight != Vector2.zero)
-            slopeDirection = facing == 1 ? slopeDirRight : slopeDirLeft;
-        else if (slopeDirLeft != Vector2.zero)
-            slopeDirection = slopeDirLeft;
-        else
-            slopeDirection = slopeDirRight;
+        rb.velocity = runSpeed * GetMoveDir();
+        isMovingOnGround = rb.velocity.x != 0;
+    }
 
-        rb.velocity = runSpeed * (new Vector2(xInput, 0) + (-xInput * slopeDirection) + new Vector2(0, -1)).normalized;
+    private void Dash()
+    {
+        dashTime -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            dashTime = dashDuration;
+        }
+        if (dashTime > 0)
+        {
+            if (dashDir == null || dashDir == Vector2.zero)
+                dashDir = GetMoveDir();
+            rb.velocity = dashSpeed * dashDir;
+            isDashing = true;
+        }
+        else
+        {
+            dashDir = Vector2.zero;
+            isDashing = false;
+        }
     }
 
     private void Jump()
     {
-        if (Input.GetButton("Jump") && isOnGround)
+        if (Input.GetButton("Jump") && isOnGround && !isDashing)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
@@ -178,6 +217,7 @@ public class WarriorInput : MonoBehaviour
     {
         animator.SetBool("isOnGround", isOnGround);
         animator.SetBool("isMovingOnGround", isMovingOnGround);
+        animator.SetBool("isDashing", isDashing);
         animator.SetFloat("yVelocity", rb.velocity.y);
     }
 }

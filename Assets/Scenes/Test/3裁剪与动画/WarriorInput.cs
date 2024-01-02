@@ -79,7 +79,7 @@ public class WarriorInput : MonoBehaviour
 
     void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
+        // xInput = Input.GetAxisRaw("Horizontal");
 
         UpdateFacing();
 
@@ -180,10 +180,10 @@ public class WarriorInput : MonoBehaviour
     {
         dashTime -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            dashTime = dashDuration;
-        }
+        // if (Input.GetKeyDown(KeyCode.LeftShift))
+        // {
+        //     dashTime = dashDuration;
+        // }
         if (dashTime > 0)
         {
             if (dashDir == null || dashDir == Vector2.zero)
@@ -200,11 +200,11 @@ public class WarriorInput : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetButton("Jump") && isOnGround && !isDashing)
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isOnGround = false;
-        }
+        // if (Input.GetButton("Jump") && isOnGround && !isDashing)
+        // {
+        //     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //     isOnGround = false;
+        // }
     }
 
     private void Glide()

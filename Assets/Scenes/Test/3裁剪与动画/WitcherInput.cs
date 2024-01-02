@@ -41,7 +41,7 @@ public class WitcherInput : MonoBehaviour
 
     void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
+        // xInput = Input.GetAxisRaw("Horizontal");
 
         UpdateFacing();
 
@@ -64,11 +64,11 @@ public class WitcherInput : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
-        }
+        // if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        //     isGrounded = false;
+        // }
     }
 
     private void UpdateFacing()

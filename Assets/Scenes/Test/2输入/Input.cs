@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class Input : MonoBehaviour
 {
     private Rigidbody2D rb;
 
@@ -25,9 +25,9 @@ public class PlayerInput : MonoBehaviour
     {
         // Debug.Log(Input.GetAxis("Horizontal"));
 
-        float xInput = Input.GetAxisRaw("Horizontal");
+        // float xInput = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
+        // rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
 
         //if (Input.GetKey(KeyCode.Space))
         //{
@@ -39,11 +39,11 @@ public class PlayerInput : MonoBehaviour
         //    Debug.Log("Jump pressed");
         //}
 
-        if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
-        {
-            // rb.AddForce(new Vector2(0, 500));
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
+        // {
+        //     // rb.AddForce(new Vector2(0, 500));
+        //     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        // }
 
     }
 }

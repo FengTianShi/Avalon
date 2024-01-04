@@ -6,25 +6,25 @@ public class PlayerStateMachine : StateMachine
     [SerializeField]
     PlayerState[] states;
 
-    Animator animator;
-
     PlayerInput input;
 
-    PlayerController controller;
+    PlayerController player;
+
+    Animator animator;
 
     void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
-
         input = GetComponent<PlayerInput>();
 
-        controller = GetComponent<PlayerController>();
+        player = GetComponent<PlayerController>();
+
+        animator = GetComponentInChildren<Animator>();
 
         stateTable = new Dictionary<System.Type, IState>(states.Length);
 
         foreach (PlayerState state in states)
         {
-            state.Initialize(input, controller, animator, this);
+            state.Initialize(this, input, player, animator);
             stateTable.Add(state.GetType(), state);
         }
     }

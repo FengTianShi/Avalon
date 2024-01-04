@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2b841d7266c1e4a88aa43901822401, type: 3}
   m_Name: PlayerStateRun
   m_EditorClassIdentifier: 
+  stateName: Run
+  transitionDuration: 0.1
+  runSpeed: 10
+  acceration: 40

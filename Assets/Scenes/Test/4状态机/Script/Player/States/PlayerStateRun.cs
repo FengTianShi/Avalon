@@ -6,29 +6,46 @@ public class PlayerStateRun : PlayerState
     [SerializeField]
     float runSpeed = 5;
 
+    [SerializeField]
+    float acceration = 5;
+
     public override void Enter()
     {
-        Debug.Log("Run State");
+        base.Enter();
 
-        animator.Play("Run");
+        currentSpeed = Mathf.Abs(player.XSpeed);
     }
 
     public override void LogicUpdate()
     {
-        // if (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed)
-        // {
-        //     stateMachine.SwitchState(typeof(PlayerStateIdle));
-        // }
-
         if (!input.Move)
         {
-            stateMachine.SwitchState(typeof(PlayerStateIdle));
+            stateMachine.SwitchState(typeof(PlayerStateBrake));
         }
+
+        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceration * Time.deltaTime);
     }
 
     public override void PhysicUpdate()
     {
-        controller.Move(runSpeed);
+        if (input.Move)
+        {
+            player.transform.localScale = new Vector3(input.Horizontal, 1, 1);
+        }
+
+        if (player.Slope != Vector2.zero)
+        {
+            player.SetVelocity(-input.Horizontal * currentSpeed * player.Slope);
+        }
+        else
+        {
+            if (player.YSpeed > 0)
+            {
+                player.SetVelocityY(0);
+            }
+
+            player.SetVelocityX(input.Horizontal * currentSpeed);
+        }
     }
 
     public override void Exit()

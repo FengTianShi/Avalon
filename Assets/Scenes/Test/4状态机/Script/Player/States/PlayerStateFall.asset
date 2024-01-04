@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1907c3c491345d9499175b2e7790779e, type: 3}
-  m_Name: PlayerStateIdle
+  m_Script: {fileID: 11500000, guid: f3c40dea51a2d04499779bd8741a2c56, type: 3}
+  m_Name: PlayerStateFall
   m_EditorClassIdentifier: 
-  stateName: Idle
+  stateName: Fall
   transitionDuration: 0.1

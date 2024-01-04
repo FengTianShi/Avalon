@@ -5,19 +5,11 @@ public class PlayerStateIdle : PlayerState
 {
     public override void Enter()
     {
-        Debug.Log("Idle State");
-
-        animator.Play("Idle");
-        controller.SetVelocity(Vector2.zero);
+        base.Enter();
     }
 
     public override void LogicUpdate()
     {
-        // if (Keyboard.current.aKey.isPressed || Keyboard.current.dKey.isPressed)
-        // {
-        //     stateMachine.SwitchState(typeof(PlayerStateRun));
-        // }
-
         if (input.Move)
         {
             stateMachine.SwitchState(typeof(PlayerStateRun));
@@ -26,6 +18,8 @@ public class PlayerStateIdle : PlayerState
 
     public override void PhysicUpdate()
     {
+        player.SetVelocityX(0);
+        player.SetVelocityY(0);
     }
 
     public override void Exit()

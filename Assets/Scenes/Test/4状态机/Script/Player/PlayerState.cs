@@ -2,43 +2,58 @@ using UnityEngine;
 
 public class PlayerState : ScriptableObject, IState
 {
+    protected PlayerStateMachine stateMachine;
+
+    [SerializeField]
+    string stateName;
+
+    int stateHash;
+
     protected PlayerInput input;
 
-    protected PlayerController controller;
+    protected PlayerController player;
 
     protected Animator animator;
 
-    protected PlayerStateMachine stateMachine;
+    [SerializeField, Range(0, 1)]
+    protected float transitionDuration = 0.1f;
+
+    protected float currentSpeed;
+
+    void OnEnable()
+    {
+        stateHash = Animator.StringToHash(stateName);
+    }
 
     public void Initialize(
+        PlayerStateMachine stateMachine,
         PlayerInput input,
-        PlayerController controller,
-        Animator animator,
-        PlayerStateMachine stateMachine)
+        PlayerController player,
+        Animator animator
+     )
     {
-        this.input = input;
-        this.controller = controller;
-        this.animator = animator;
         this.stateMachine = stateMachine;
+        this.input = input;
+        this.player = player;
+        this.animator = animator;
     }
 
     public virtual void Enter()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(stateName);
+
+        animator.CrossFade(stateHash, transitionDuration);
     }
 
     public virtual void Exit()
     {
-        throw new System.NotImplementedException();
     }
 
     public virtual void LogicUpdate()
     {
-        throw new System.NotImplementedException();
     }
 
     public virtual void PhysicUpdate()
     {
-        throw new System.NotImplementedException();
     }
 }

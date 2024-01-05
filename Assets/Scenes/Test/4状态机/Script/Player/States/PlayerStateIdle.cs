@@ -14,6 +14,16 @@ public class PlayerStateIdle : PlayerState
         {
             stateMachine.SwitchState(typeof(PlayerStateRun));
         }
+
+        if (input.Jump)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateJump));
+        }
+
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateFall));
+        }
     }
 
     public override void PhysicUpdate()

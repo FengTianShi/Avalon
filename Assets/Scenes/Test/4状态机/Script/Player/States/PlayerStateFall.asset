@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Fall
   transitionDuration: 0.1
+  moveSpeed: 8

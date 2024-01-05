@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerStateBrake : PlayerState
 {
     [SerializeField]
-    float deceleration = 5;
+    float deceleration;
 
     public override void Enter()
     {
@@ -25,6 +25,16 @@ public class PlayerStateBrake : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateRun));
         }
 
+        if (input.Jump)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateJump));
+        }
+
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateFall));
+        }
+
         currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
     }
 
@@ -32,7 +42,7 @@ public class PlayerStateBrake : PlayerState
     {
         if (player.Slope != Vector2.zero)
         {
-            player.SetVelocity(currentSpeed * -player.transform.localScale.x * player.Slope);
+            player.SetVelocity(currentSpeed * player.transform.localScale.x * -player.Slope);
         }
         else
         {

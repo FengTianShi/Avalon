@@ -4,10 +4,10 @@ using UnityEngine;
 public class PlayerStateRun : PlayerState
 {
     [SerializeField]
-    float runSpeed = 5;
+    float runSpeed;
 
     [SerializeField]
-    float acceration = 5;
+    float acceleration;
 
     public override void Enter()
     {
@@ -23,23 +23,30 @@ public class PlayerStateRun : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateBrake));
         }
 
-        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceration * Time.deltaTime);
+        if (input.Jump)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateJump));
+        }
+
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateFall));
+        }
+
+        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);
     }
 
     public override void PhysicUpdate()
     {
-        if (input.Move)
-        {
-            player.transform.localScale = new Vector3(input.Horizontal, 1, 1);
-        }
+        player.SetFacing();
 
         if (player.Slope != Vector2.zero)
         {
-            player.SetVelocity(-input.Horizontal * currentSpeed * player.Slope);
+            player.SetVelocity(input.Horizontal * currentSpeed * -player.Slope);
         }
         else
         {
-            if (player.YSpeed > 0)
+            if (player.YSpeed > 0.00f)
             {
                 player.SetVelocityY(0);
             }

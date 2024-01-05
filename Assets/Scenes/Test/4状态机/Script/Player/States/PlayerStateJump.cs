@@ -18,16 +18,25 @@ public class PlayerStateJump : PlayerState
 
     public override void LogicUpdate()
     {
-        if (player.YSpeed <= 0)
-        {
-            stateMachine.SwitchState(typeof(PlayerStateFall));
-        }
-
         if (player.IsCeiling)
         {
             player.SetVelocityY(0);
         }
 
+        if (player.YSpeed <= 0)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateFall));
+        }
+
+        if (input.Dash)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateDash));
+        }
+
+        if (input.Attack)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateAttack3));
+        }
     }
 
     public override void PhysicUpdate()

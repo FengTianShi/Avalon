@@ -314,6 +314,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 809431c22a1f75f4e937342db1ac3bc8, type: 2}
   - {fileID: 11400000, guid: 3aa423b9fb1ae2647920cf2ef4f88756, type: 2}
   - {fileID: 11400000, guid: c19f27a74b6bf854894734cf8768d017, type: 2}
+  - {fileID: 11400000, guid: a4de802c79431854083a2b2d38f0ae87, type: 2}
+  - {fileID: 11400000, guid: 39ac5bea92361dd4187fad7d3aff0d35, type: 2}
+  - {fileID: 11400000, guid: 07f4ff110f3af7349ae9b1c2c51ecd83, type: 2}
+  - {fileID: 11400000, guid: 15b1b6aeb4fe2fb4fb0ca71222a9ec80, type: 2}
 --- !u!114 &306021928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,8 +338,8 @@ MonoBehaviour:
   Slope: {x: 0, y: 0}
   groundCheckRayNum: 10
   groundCheckDistance: 0.2
-  ceilingCheckRayNum: 10
-  ceilingCheckDistance: 0.2
+  ceilingCheckRayNum: 3
+  ceilingCheckDistance: 0.1
   slopeCheckDistance: 1
 --- !u!114 &306021929
 MonoBehaviour:

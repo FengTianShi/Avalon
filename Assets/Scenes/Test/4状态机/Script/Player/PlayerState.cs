@@ -20,6 +20,14 @@ public class PlayerState : ScriptableObject, IState
 
     protected float currentSpeed;
 
+    private float stateStartTime;
+
+    protected float AnimationDuration => animator.GetCurrentAnimatorStateInfo(0).length;
+
+    protected float CurrentStateDuration => Time.time - stateStartTime;
+
+    protected bool IsAnimationFinished => CurrentStateDuration >= AnimationDuration;
+
     void OnEnable()
     {
         stateHash = Animator.StringToHash(stateName);
@@ -41,6 +49,8 @@ public class PlayerState : ScriptableObject, IState
     public virtual void Enter()
     {
         Debug.Log(stateName);
+
+        stateStartTime = Time.time;
 
         animator.CrossFade(stateHash, transitionDuration);
     }

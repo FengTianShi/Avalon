@@ -18,6 +18,10 @@ public class PlayerInput : MonoBehaviour
 
     public bool StopJump => playerInputActions.Gameplay.Jump.WasReleasedThisFrame();
 
+    public bool Dash => playerInputActions.Gameplay.Dash.WasPerformedThisFrame();
+
+    public bool Attack => playerInputActions.Gameplay.Attack.WasPerformedThisFrame();
+
     void Awake()
     {
         playerInputActions = new PlayerInputActions();

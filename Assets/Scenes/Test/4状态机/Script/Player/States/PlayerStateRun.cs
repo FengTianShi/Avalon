@@ -28,9 +28,19 @@ public class PlayerStateRun : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateJump));
         }
 
+        if (input.Dash)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateDash));
+        }
+
         if (!player.IsGrounded)
         {
             stateMachine.SwitchState(typeof(PlayerStateFall));
+        }
+
+        if (input.Attack)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateAttack1));
         }
 
         currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);
@@ -46,7 +56,7 @@ public class PlayerStateRun : PlayerState
         }
         else
         {
-            if (player.YSpeed > 0.00f)
+            if (player.YSpeed > 0)
             {
                 player.SetVelocityY(0);
             }

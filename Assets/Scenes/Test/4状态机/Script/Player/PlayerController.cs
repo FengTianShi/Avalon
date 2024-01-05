@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 30;
+
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
@@ -161,5 +163,27 @@ public class PlayerController : MonoBehaviour
     public void SetVelocity(Vector2 velocity)
     {
         rb.velocity = velocity;
+    }
+
+    public void Decelerate(float speed)
+    {
+        if (Slope != Vector2.zero)
+        {
+            SetVelocity(speed * transform.localScale.x * -Slope);
+        }
+        else
+        {
+            if (YSpeed > 0)
+            {
+                SetVelocityY(0);
+            }
+
+            SetVelocityX(speed * transform.localScale.x);
+        }
+
+        if (speed == 0)
+        {
+            SetVelocityX(0);
+        }
     }
 }

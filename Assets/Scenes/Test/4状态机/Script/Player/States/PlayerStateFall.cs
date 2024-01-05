@@ -17,6 +17,16 @@ public class PlayerStateFall : PlayerState
         {
             stateMachine.SwitchState(typeof(PlayerStateIdle));
         }
+
+        if (input.Dash)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateDash));
+        }
+
+        if (input.Attack)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateAttack3));
+        }
     }
 
     public override void PhysicUpdate()

@@ -30,6 +30,11 @@ public class PlayerStateBrake : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateJump));
         }
 
+        if (input.Attack)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateAttack2));
+        }
+
         if (!player.IsGrounded)
         {
             stateMachine.SwitchState(typeof(PlayerStateFall));
@@ -40,24 +45,7 @@ public class PlayerStateBrake : PlayerState
 
     public override void PhysicUpdate()
     {
-        if (player.Slope != Vector2.zero)
-        {
-            player.SetVelocity(currentSpeed * player.transform.localScale.x * -player.Slope);
-        }
-        else
-        {
-            if (player.YSpeed > 0)
-            {
-                player.SetVelocityY(0);
-            }
-
-            player.SetVelocityX(currentSpeed * player.transform.localScale.x);
-        }
-
-        if (currentSpeed == 0)
-        {
-            player.SetVelocityX(0);
-        }
+        player.Decelerate(currentSpeed);
     }
 
     public override void Exit()

@@ -338,7 +338,7 @@ MonoBehaviour:
   Slope: {x: 0, y: 0}
   groundCheckRayNum: 10
   groundCheckDistance: 0.2
-  ceilingCheckRayNum: 3
+  ceilingCheckRayNum: 5
   ceilingCheckDistance: 0.1
   slopeCheckDistance: 1
 --- !u!114 &306021929

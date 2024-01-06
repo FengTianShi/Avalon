@@ -13,11 +13,6 @@ public class PlayerStateFall : PlayerState
 
     public override void LogicUpdate()
     {
-        if (player.IsGrounded)
-        {
-            stateMachine.SwitchState(typeof(PlayerStateIdle));
-        }
-
         if (input.Dash)
         {
             stateMachine.SwitchState(typeof(PlayerStateDash));
@@ -26,6 +21,11 @@ public class PlayerStateFall : PlayerState
         if (input.Attack)
         {
             stateMachine.SwitchState(typeof(PlayerStateAttack3));
+        }
+
+        if (player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateIdle));
         }
     }
 

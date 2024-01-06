@@ -13,7 +13,7 @@ public class PlayerStateAttack3 : PlayerState
     {
         base.Enter();
 
-        currentSpeed = Mathf.Abs(enterSpeed);
+        currentSpeed = enterSpeed;
 
         player.SetFacing();
     }
@@ -21,6 +21,11 @@ public class PlayerStateAttack3 : PlayerState
     public override void LogicUpdate()
     {
         currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
+
+        if (input.Dash)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateDash));
+        }
 
         if (IsAnimationFinished)
         {
@@ -30,7 +35,7 @@ public class PlayerStateAttack3 : PlayerState
 
     public override void PhysicUpdate()
     {
-        player.Decelerate(currentSpeed);
+        player.Move(currentSpeed);
     }
 
     public override void Exit()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -137,16 +135,12 @@ public class PlayerController : MonoBehaviour
             Color.red);
 
         if (hit && hit.normal != Vector2.up)
-            Slope = Vector2.Perpendicular(hit.normal).normalized;
-        else
-            Slope = Vector2.zero;
-    }
-
-    public void SetFacing()
-    {
-        if (input.Move)
         {
-            transform.localScale = new Vector3(input.Horizontal, 1, 1);
+            Slope = Vector2.Perpendicular(hit.normal).normalized;
+        }
+        else
+        {
+            Slope = Vector2.zero;
         }
     }
 
@@ -165,7 +159,15 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    public void Decelerate(float speed)
+    public void SetFacing()
+    {
+        if (input.Move)
+        {
+            transform.localScale = new Vector3(input.Horizontal, 1, 1);
+        }
+    }
+
+    public void Move(float speed)
     {
         if (Slope != Vector2.zero)
         {
@@ -179,11 +181,6 @@ public class PlayerController : MonoBehaviour
             }
 
             SetVelocityX(speed * transform.localScale.x);
-        }
-
-        if (speed == 0)
-        {
-            SetVelocityX(0);
         }
     }
 }

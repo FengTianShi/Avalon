@@ -11,19 +11,13 @@ public class PlayerStateDash : PlayerState
 
     private float dashTime;
 
-    private float dashDirection;
-
     public override void Enter()
     {
         base.Enter();
 
-        dashTime = dashDuration;
+        player.SetFacing();
 
-        dashDirection = input.Horizontal;
-        if (input.Horizontal == 0)
-        {
-            dashDirection = player.transform.localScale.x;
-        }
+        dashTime = dashDuration;
     }
 
     public override void LogicUpdate()
@@ -39,8 +33,10 @@ public class PlayerStateDash : PlayerState
             {
                 stateMachine.SwitchState(typeof(PlayerStateFall));
             }
-
-            stateMachine.SwitchState(typeof(PlayerStateBrake));
+            else
+            {
+                stateMachine.SwitchState(typeof(PlayerStateBrake));
+            }
         }
 
         if (input.Attack)
@@ -51,7 +47,7 @@ public class PlayerStateDash : PlayerState
 
     public override void PhysicUpdate()
     {
-        player.SetVelocityX(dashDirection * dashSpeed);
+        player.SetVelocityX(player.transform.localScale.x * dashSpeed);
 
         if (!player.IsGrounded)
         {

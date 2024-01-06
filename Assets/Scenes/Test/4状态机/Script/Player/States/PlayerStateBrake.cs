@@ -15,6 +15,8 @@ public class PlayerStateBrake : PlayerState
 
     public override void LogicUpdate()
     {
+        currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
+
         if (currentSpeed == 0)
         {
             stateMachine.SwitchState(typeof(PlayerStateIdle));
@@ -32,20 +34,18 @@ public class PlayerStateBrake : PlayerState
 
         if (input.Attack)
         {
-            stateMachine.SwitchState(typeof(PlayerStateAttack2));
+            stateMachine.SwitchState(typeof(PlayerStateAttack3));
         }
 
         if (!player.IsGrounded)
         {
             stateMachine.SwitchState(typeof(PlayerStateFall));
         }
-
-        currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
     }
 
     public override void PhysicUpdate()
     {
-        player.Decelerate(currentSpeed);
+        player.Move(currentSpeed);
     }
 
     public override void Exit()

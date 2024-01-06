@@ -18,6 +18,8 @@ public class PlayerStateRun : PlayerState
 
     public override void LogicUpdate()
     {
+        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);
+
         if (!input.Move)
         {
             stateMachine.SwitchState(typeof(PlayerStateBrake));
@@ -33,36 +35,22 @@ public class PlayerStateRun : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateDash));
         }
 
-        if (!player.IsGrounded)
-        {
-            stateMachine.SwitchState(typeof(PlayerStateFall));
-        }
-
         if (input.Attack)
         {
             stateMachine.SwitchState(typeof(PlayerStateAttack1));
         }
 
-        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateFall));
+        }
     }
 
     public override void PhysicUpdate()
     {
         player.SetFacing();
 
-        if (player.Slope != Vector2.zero)
-        {
-            player.SetVelocity(input.Horizontal * currentSpeed * -player.Slope);
-        }
-        else
-        {
-            if (player.YSpeed > 0)
-            {
-                player.SetVelocityY(0);
-            }
-
-            player.SetVelocityX(input.Horizontal * currentSpeed);
-        }
+        player.Move(currentSpeed);
     }
 
     public override void Exit()

@@ -9,28 +9,34 @@ public class PlayerStateAttack2 : PlayerState
     [SerializeField]
     float deceleration;
 
-    private bool isAttack;
+    private bool isContinueAttack;
 
     public override void Enter()
     {
         base.Enter();
 
-        isAttack = false;
-        currentSpeed = Mathf.Abs(enterSpeed);
+        currentSpeed = enterSpeed;
+
+        isContinueAttack = false;
     }
 
     public override void LogicUpdate()
     {
         currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
 
+        if (input.Dash)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateDash));
+        }
+
         if (input.Attack)
         {
-            isAttack = true;
+            isContinueAttack = true;
         }
 
         if (IsAnimationFinished)
         {
-            if (isAttack)
+            if (isContinueAttack)
             {
                 stateMachine.SwitchState(typeof(PlayerStateAttack3));
             }
@@ -43,7 +49,7 @@ public class PlayerStateAttack2 : PlayerState
 
     public override void PhysicUpdate()
     {
-        player.Decelerate(currentSpeed);
+        player.Move(currentSpeed);
     }
 
     public override void Exit()

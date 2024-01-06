@@ -25,14 +25,14 @@ public class PlayerStateIdle : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateDash));
         }
 
-        if (!player.IsGrounded)
-        {
-            stateMachine.SwitchState(typeof(PlayerStateFall));
-        }
-
         if (input.Attack)
         {
             stateMachine.SwitchState(typeof(PlayerStateAttack1));
+        }
+
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateFall));
         }
     }
 

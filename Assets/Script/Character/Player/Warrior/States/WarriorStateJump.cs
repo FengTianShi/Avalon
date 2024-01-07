@@ -28,12 +28,12 @@ public class WarriorStateJump : WarriorState
             StateMachine.SwitchState(typeof(WarriorStateFall));
         }
 
-        if (Input.IsDash)
+        if (Player.Input.IsDash)
         {
             StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (Input.IsAttack)
+        if (Player.Input.IsAttack)
         {
             StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }
@@ -43,9 +43,9 @@ public class WarriorStateJump : WarriorState
     {
         Player.SetFacing();
 
-        if (Input.IsMove)
+        if (Player.Input.IsMove)
         {
-            Player.SetVelocityX(Input.XInput * MoveSpeed);
+            Player.SetVelocityX(Player.Input.XInput * MoveSpeed);
         }
     }
 

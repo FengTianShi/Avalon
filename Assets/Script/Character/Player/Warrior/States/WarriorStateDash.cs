@@ -26,8 +26,7 @@ public class WarriorStateDash : WarriorState
 
         if (DashTime <= 0)
         {
-            Player.SetVelocityX(0);
-            Player.SetVelocityY(0);
+            Player.Stop();
 
             if (!Player.IsGrounded)
             {
@@ -39,7 +38,7 @@ public class WarriorStateDash : WarriorState
             }
         }
 
-        if (Input.IsAttack)
+        if (Player.Input.IsAttack)
         {
             StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }

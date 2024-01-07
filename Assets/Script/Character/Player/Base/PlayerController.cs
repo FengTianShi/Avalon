@@ -1,6 +1,9 @@
+using UnityEngine;
+
 public class PlayerController : CharacterController
 {
-    protected PlayerInput Input;
+    [HideInInspector]
+    public PlayerInput Input;
 
     protected override void Awake()
     {
@@ -12,11 +15,6 @@ public class PlayerController : CharacterController
     void Start()
     {
         Input.EnableGameplayInputs();
-    }
-
-    protected override void Update()
-    {
-        base.Update();
     }
 
     public void SetFacing()

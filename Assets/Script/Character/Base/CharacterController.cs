@@ -6,6 +6,8 @@ public class CharacterController : MonoBehaviour
 
     protected CapsuleCollider2D CC;
 
+    [Header("Setting")]
+
     [SerializeField]
     protected LayerMask GroundLayer;
 
@@ -23,6 +25,8 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField]
     protected float SlopeCheckDistance;
+
+    [Header("Info")]
 
     public bool IsGrounded;
 
@@ -174,5 +178,11 @@ public class CharacterController : MonoBehaviour
 
             SetVelocityX(speed * transform.localScale.x);
         }
+    }
+
+    public virtual void Stop()
+    {
+        SetVelocityX(0);
+        SetVelocityY(0);
     }
 }

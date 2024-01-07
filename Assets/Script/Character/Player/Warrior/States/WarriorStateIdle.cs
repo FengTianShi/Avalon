@@ -10,22 +10,22 @@ public class WarriorStateIdle : WarriorState
 
     public override void LogicUpdate()
     {
-        if (Input.IsMove)
+        if (Player.Input.IsMove)
         {
             StateMachine.SwitchState(typeof(WarriorStateRun));
         }
 
-        if (Input.IsJump)
+        if (Player.Input.IsJump)
         {
             StateMachine.SwitchState(typeof(WarriorStateJump));
         }
 
-        if (Input.IsDash)
+        if (Player.Input.IsDash)
         {
             StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (Input.IsAttack)
+        if (Player.Input.IsAttack)
         {
             StateMachine.SwitchState(typeof(WarriorStateAttack1));
         }
@@ -38,8 +38,7 @@ public class WarriorStateIdle : WarriorState
 
     public override void PhysicUpdate()
     {
-        Player.SetVelocityX(0);
-        Player.SetVelocityY(0);
+        Player.Stop();
     }
 
     public override void Exit()

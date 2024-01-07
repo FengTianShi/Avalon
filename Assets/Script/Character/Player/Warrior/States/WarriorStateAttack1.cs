@@ -24,12 +24,12 @@ public class WarriorStateAttack1 : WarriorState
     {
         CurrentSpeed = Mathf.MoveTowards(CurrentSpeed, 0, Deceleration * Time.deltaTime);
 
-        if (Input.IsDash)
+        if (Player.Input.IsDash)
         {
             StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (Input.IsAttack)
+        if (Player.Input.IsAttack)
         {
             IsContinueAttack = true;
         }
@@ -49,7 +49,7 @@ public class WarriorStateAttack1 : WarriorState
 
     public override void PhysicUpdate()
     {
-        Character.Move(CurrentSpeed);
+        Player.Move(CurrentSpeed);
     }
 
     public override void Exit()

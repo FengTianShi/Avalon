@@ -12,17 +12,12 @@ public class CharacterStateMachine : StateMachine
 
     protected virtual void Awake()
     {
-        Character = GetComponent<CharacterController>();
-
         Animator = GetComponentInChildren<Animator>();
+
+        Character = GetComponent<CharacterController>();
 
         StateTable = new Dictionary<System.Type, IState>(States.Length);
 
-        InitializeStates();
-    }
-
-    protected virtual void InitializeStates()
-    {
         foreach (CharacterState state in States)
         {
             state.Initialize(this, Character, Animator);

@@ -14,7 +14,7 @@ public class CharacterState : ScriptableObject, IState
     protected Animator Animator;
 
     [SerializeField, Range(0, 1)]
-    protected float TransitionDuration = 0.1f;
+    protected float TransitionDuration = 0f;
 
     protected float StateStartTime;
 

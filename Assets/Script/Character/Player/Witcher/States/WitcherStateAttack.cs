@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WarriorStateAttack3", menuName = "Data/StateMachine/WarriorState/Attack3")]
-public class WarriorStateAttack3 : WarriorState
+[CreateAssetMenu(fileName = "WitcherStateAttack", menuName = "Data/StateMachine/WitcherState/Attack")]
+public class WitcherStateAttack : WitcherState
 {
     [SerializeField]
     float EnterSpeed;
@@ -14,22 +14,15 @@ public class WarriorStateAttack3 : WarriorState
         base.Enter();
 
         CurrentSpeed = EnterSpeed;
-
-        Player.SetFacing();
     }
 
     public override void LogicUpdate()
     {
         CurrentSpeed = Mathf.MoveTowards(CurrentSpeed, 0, Deceleration * Time.deltaTime);
 
-        if (Player.Input.IsDash)
-        {
-            StateMachine.SwitchState(typeof(WarriorStateDash));
-        }
-
         if (IsAnimationFinished)
         {
-            StateMachine.SwitchState(typeof(WarriorStateIdle));
+            StateMachine.SwitchState(typeof(WitcherStateIdle));
         }
     }
 

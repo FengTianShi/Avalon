@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WarriorStateRun", menuName = "Data/StateMachine/WarriorState/Run")]
-public class WarriorStateRun : WarriorState
+[CreateAssetMenu(fileName = "WitcherStateRun", menuName = "Data/StateMachine/WitcherState/Run")]
+public class WitcherStateRun : WitcherState
 {
     [SerializeField]
     float RunSpeed;
@@ -22,27 +22,12 @@ public class WarriorStateRun : WarriorState
 
         if (!Player.Input.IsMove)
         {
-            StateMachine.SwitchState(typeof(WarriorStateBrake));
-        }
-
-        if (Player.Input.IsJump)
-        {
-            StateMachine.SwitchState(typeof(WarriorStateJump));
-        }
-
-        if (Player.Input.IsDash)
-        {
-            StateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WitcherStateIdle));
         }
 
         if (Player.Input.IsAttack)
         {
-            StateMachine.SwitchState(typeof(WarriorStateAttack1));
-        }
-
-        if (!Player.IsGrounded)
-        {
-            StateMachine.SwitchState(typeof(WarriorStateFall));
+            StateMachine.SwitchState(typeof(WitcherStateAttack));
         }
     }
 

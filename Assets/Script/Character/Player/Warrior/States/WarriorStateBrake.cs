@@ -22,17 +22,17 @@ public class WarriorStateBrake : WarriorState
             StateMachine.SwitchState(typeof(WarriorStateIdle));
         }
 
-        if (Input.IsMove)
+        if (Player.Input.IsMove)
         {
             StateMachine.SwitchState(typeof(WarriorStateRun));
         }
 
-        if (Input.IsJump)
+        if (Player.Input.IsJump)
         {
             StateMachine.SwitchState(typeof(WarriorStateJump));
         }
 
-        if (Input.IsAttack)
+        if (Player.Input.IsAttack)
         {
             StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerStateIdle
   m_EditorClassIdentifier: 
   stateName: Idle
-  transitionDuration: 0.1
+  transitionDuration: 0

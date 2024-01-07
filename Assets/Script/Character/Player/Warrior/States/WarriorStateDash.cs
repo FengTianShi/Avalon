@@ -4,54 +4,54 @@ using UnityEngine;
 public class WarriorStateDash : WarriorState
 {
     [SerializeField]
-    float dashSpeed;
+    float DashSpeed;
 
     [SerializeField]
-    float dashDuration;
+    float DashDuration;
 
-    private float dashTime;
+    private float DashTime;
 
     public override void Enter()
     {
         base.Enter();
 
-        warrior.SetFacing();
+        Player.SetFacing();
 
-        dashTime = dashDuration;
+        DashTime = DashDuration;
     }
 
     public override void LogicUpdate()
     {
-        dashTime -= Time.deltaTime;
+        DashTime -= Time.deltaTime;
 
-        if (dashTime <= 0)
+        if (DashTime <= 0)
         {
-            warrior.SetVelocityX(0);
-            warrior.SetVelocityY(0);
+            Player.SetVelocityX(0);
+            Player.SetVelocityY(0);
 
-            if (!warrior.IsGrounded)
+            if (!Player.IsGrounded)
             {
-                stateMachine.SwitchState(typeof(WarriorStateFall));
+                StateMachine.SwitchState(typeof(WarriorStateFall));
             }
             else
             {
-                stateMachine.SwitchState(typeof(WarriorStateBrake));
+                StateMachine.SwitchState(typeof(WarriorStateBrake));
             }
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            stateMachine.SwitchState(typeof(WarriorStateAttack3));
+            StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.SetVelocityX(warrior.transform.localScale.x * dashSpeed);
+        Player.SetVelocityX(Player.transform.localScale.x * DashSpeed);
 
-        if (!warrior.IsGrounded)
+        if (!Player.IsGrounded)
         {
-            warrior.SetVelocityY(0);
+            Player.SetVelocityY(0);
         }
     }
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c40dea51a2d04499779bd8741a2c56, type: 3}
   m_Name: WarriorStateFall
   m_EditorClassIdentifier: 
-  stateName: Fall
-  transitionDuration: 0
-  moveSpeed: 8
+  StateName: Fall
+  TransitionDuration: 0
+  MoveSpeed: 8

@@ -3,35 +3,35 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    IState currentState;
+    IState CurrentState;
 
-    protected Dictionary<System.Type, IState> stateTable;
+    protected Dictionary<System.Type, IState> StateTable;
 
     void Update()
     {
-        currentState.LogicUpdate();
+        CurrentState.LogicUpdate();
     }
 
     void FixedUpdate()
     {
-        currentState.PhysicUpdate();
+        CurrentState.PhysicUpdate();
     }
 
     protected void SwitchOn(IState newState)
     {
-        currentState = newState;
-        currentState.Enter();
+        CurrentState = newState;
+        CurrentState.Enter();
     }
 
     public void SwitchState(IState newState)
     {
-        currentState.Exit();
+        CurrentState.Exit();
         SwitchOn(newState);
     }
 
     public void SwitchState(System.Type newStateType)
     {
-        currentState.Exit();
-        SwitchOn(stateTable[newStateType]);
+        CurrentState.Exit();
+        SwitchOn(StateTable[newStateType]);
     }
 }

@@ -10,36 +10,36 @@ public class WarriorStateIdle : WarriorState
 
     public override void LogicUpdate()
     {
-        if (input.Move)
+        if (Input.IsMove)
         {
-            stateMachine.SwitchState(typeof(WarriorStateRun));
+            StateMachine.SwitchState(typeof(WarriorStateRun));
         }
 
-        if (input.Jump)
+        if (Input.IsJump)
         {
-            stateMachine.SwitchState(typeof(WarriorStateJump));
+            StateMachine.SwitchState(typeof(WarriorStateJump));
         }
 
-        if (input.Dash)
+        if (Input.IsDash)
         {
-            stateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            stateMachine.SwitchState(typeof(WarriorStateAttack1));
+            StateMachine.SwitchState(typeof(WarriorStateAttack1));
         }
 
-        if (!warrior.IsGrounded)
+        if (!Player.IsGrounded)
         {
-            stateMachine.SwitchState(typeof(WarriorStateFall));
+            StateMachine.SwitchState(typeof(WarriorStateFall));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.SetVelocityX(0);
-        warrior.SetVelocityY(0);
+        Player.SetVelocityX(0);
+        Player.SetVelocityY(0);
     }
 
     public override void Exit()

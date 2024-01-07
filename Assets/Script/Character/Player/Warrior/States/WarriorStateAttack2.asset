@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9facd5486b808748a5e4059725cf492, type: 3}
   m_Name: WarriorStateAttack2
   m_EditorClassIdentifier: 
-  stateName: Attack2
-  transitionDuration: 0
-  enterSpeed: 5
-  deceleration: 40
+  StateName: Attack2
+  TransitionDuration: 0
+  EnterSpeed: 5
+  Deceleration: 40

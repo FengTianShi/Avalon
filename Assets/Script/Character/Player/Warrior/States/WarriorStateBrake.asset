@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fde5d8712f00a47862086de0b53132, type: 3}
   m_Name: WarriorStateBrake
   m_EditorClassIdentifier: 
-  stateName: Brake
-  transitionDuration: 0
-  deceleration: 40
+  StateName: Brake
+  TransitionDuration: 0
+  Deceleration: 40

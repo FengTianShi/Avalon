@@ -4,7 +4,7 @@ using UnityEngine;
 public class WarriorStateFall : WarriorState
 {
     [SerializeField]
-    float moveSpeed;
+    float MoveSpeed;
 
     public override void Enter()
     {
@@ -13,29 +13,29 @@ public class WarriorStateFall : WarriorState
 
     public override void LogicUpdate()
     {
-        if (input.Dash)
+        if (Input.IsDash)
         {
-            stateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            stateMachine.SwitchState(typeof(WarriorStateAttack3));
+            StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }
 
-        if (warrior.IsGrounded)
+        if (Player.IsGrounded)
         {
-            stateMachine.SwitchState(typeof(WarriorStateIdle));
+            StateMachine.SwitchState(typeof(WarriorStateIdle));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.SetFacing();
+        Player.SetFacing();
 
-        if (input.Move)
+        if (Input.IsMove)
         {
-            warrior.SetVelocityX(input.Horizontal * moveSpeed);
+            Player.SetVelocityX(Input.XInput * MoveSpeed);
         }
     }
 

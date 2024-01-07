@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b84b50e88911f946b1a580fa4909957, type: 3}
   m_Name: WarriorStateJump
   m_EditorClassIdentifier: 
-  stateName: Jump
-  transitionDuration: 0
-  jumpForce: 15
-  moveSpeed: 8
+  StateName: Jump
+  TransitionDuration: 0
+  JumpForce: 15
+  MoveSpeed: 8

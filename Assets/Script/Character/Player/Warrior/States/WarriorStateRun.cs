@@ -4,53 +4,53 @@ using UnityEngine;
 public class WarriorStateRun : WarriorState
 {
     [SerializeField]
-    float runSpeed;
+    float RunSpeed;
 
     [SerializeField]
-    float acceleration;
+    float Acceleration;
 
     public override void Enter()
     {
         base.Enter();
 
-        currentSpeed = Mathf.Abs(warrior.XSpeed);
+        CurrentSpeed = Mathf.Abs(Player.XSpeed);
     }
 
     public override void LogicUpdate()
     {
-        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);
+        CurrentSpeed = Mathf.MoveTowards(CurrentSpeed, RunSpeed, Acceleration * Time.deltaTime);
 
-        if (!input.Move)
+        if (!Input.IsMove)
         {
-            stateMachine.SwitchState(typeof(WarriorStateBrake));
+            StateMachine.SwitchState(typeof(WarriorStateBrake));
         }
 
-        if (input.Jump)
+        if (Input.IsJump)
         {
-            stateMachine.SwitchState(typeof(WarriorStateJump));
+            StateMachine.SwitchState(typeof(WarriorStateJump));
         }
 
-        if (input.Dash)
+        if (Input.IsDash)
         {
-            stateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            stateMachine.SwitchState(typeof(WarriorStateAttack1));
+            StateMachine.SwitchState(typeof(WarriorStateAttack1));
         }
 
-        if (!warrior.IsGrounded)
+        if (!Player.IsGrounded)
         {
-            stateMachine.SwitchState(typeof(WarriorStateFall));
+            StateMachine.SwitchState(typeof(WarriorStateFall));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.SetFacing();
+        Player.SetFacing();
 
-        warrior.Move(currentSpeed);
+        Player.Move(CurrentSpeed);
     }
 
     public override void Exit()

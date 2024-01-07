@@ -4,48 +4,48 @@ using UnityEngine;
 public class WarriorStateJump : WarriorState
 {
     [SerializeField]
-    float jumpForce;
+    float JumpForce;
 
     [SerializeField]
-    float moveSpeed;
+    float MoveSpeed;
 
     public override void Enter()
     {
         base.Enter();
 
-        warrior.SetVelocityY(jumpForce);
+        Player.SetVelocityY(JumpForce);
     }
 
     public override void LogicUpdate()
     {
-        if (warrior.IsCeiling)
+        if (Player.IsCeiling)
         {
-            warrior.SetVelocityY(0);
+            Player.SetVelocityY(0);
         }
 
-        if (warrior.YSpeed <= 0)
+        if (Player.YSpeed <= 0)
         {
-            stateMachine.SwitchState(typeof(WarriorStateFall));
+            StateMachine.SwitchState(typeof(WarriorStateFall));
         }
 
-        if (input.Dash)
+        if (Input.IsDash)
         {
-            stateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            stateMachine.SwitchState(typeof(WarriorStateAttack3));
+            StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.SetFacing();
+        Player.SetFacing();
 
-        if (input.Move)
+        if (Input.IsMove)
         {
-            warrior.SetVelocityX(input.Horizontal * moveSpeed);
+            Player.SetVelocityX(Input.XInput * MoveSpeed);
         }
     }
 

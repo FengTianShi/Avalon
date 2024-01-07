@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdddd3d8047738c40b29873f91729395, type: 3}
   m_Name: WarriorStateDash
   m_EditorClassIdentifier: 
-  stateName: Dash
-  transitionDuration: 0
-  dashSpeed: 20
-  dashDuration: 0.3
+  StateName: Dash
+  TransitionDuration: 0
+  DashSpeed: 20
+  DashDuration: 0.3

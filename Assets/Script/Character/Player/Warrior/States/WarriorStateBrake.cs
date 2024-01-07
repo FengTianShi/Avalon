@@ -4,48 +4,48 @@ using UnityEngine;
 public class WarriorStateBrake : WarriorState
 {
     [SerializeField]
-    float deceleration;
+    float Deceleration;
 
     public override void Enter()
     {
         base.Enter();
 
-        currentSpeed = Mathf.Abs(warrior.XSpeed);
+        CurrentSpeed = Mathf.Abs(Player.XSpeed);
     }
 
     public override void LogicUpdate()
     {
-        currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
+        CurrentSpeed = Mathf.MoveTowards(CurrentSpeed, 0, Deceleration * Time.deltaTime);
 
-        if (currentSpeed == 0)
+        if (CurrentSpeed == 0)
         {
-            stateMachine.SwitchState(typeof(WarriorStateIdle));
+            StateMachine.SwitchState(typeof(WarriorStateIdle));
         }
 
-        if (input.Move)
+        if (Input.IsMove)
         {
-            stateMachine.SwitchState(typeof(WarriorStateRun));
+            StateMachine.SwitchState(typeof(WarriorStateRun));
         }
 
-        if (input.Jump)
+        if (Input.IsJump)
         {
-            stateMachine.SwitchState(typeof(WarriorStateJump));
+            StateMachine.SwitchState(typeof(WarriorStateJump));
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            stateMachine.SwitchState(typeof(WarriorStateAttack3));
+            StateMachine.SwitchState(typeof(WarriorStateAttack3));
         }
 
-        if (!warrior.IsGrounded)
+        if (!Player.IsGrounded)
         {
-            stateMachine.SwitchState(typeof(WarriorStateFall));
+            StateMachine.SwitchState(typeof(WarriorStateFall));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.Move(currentSpeed);
+        Player.Move(CurrentSpeed);
     }
 
     public override void Exit()

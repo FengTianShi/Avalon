@@ -4,38 +4,38 @@ using UnityEngine;
 public class WarriorStateAttack3 : WarriorState
 {
     [SerializeField]
-    float enterSpeed;
+    float EnterSpeed;
 
     [SerializeField]
-    float deceleration;
+    float Deceleration;
 
     public override void Enter()
     {
         base.Enter();
 
-        currentSpeed = enterSpeed;
+        CurrentSpeed = EnterSpeed;
 
-        warrior.SetFacing();
+        Player.SetFacing();
     }
 
     public override void LogicUpdate()
     {
-        currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
+        CurrentSpeed = Mathf.MoveTowards(CurrentSpeed, 0, Deceleration * Time.deltaTime);
 
-        if (input.Dash)
+        if (Input.IsDash)
         {
-            stateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
         if (IsAnimationFinished)
         {
-            stateMachine.SwitchState(typeof(WarriorStateIdle));
+            StateMachine.SwitchState(typeof(WarriorStateIdle));
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.Move(currentSpeed);
+        Player.Move(CurrentSpeed);
     }
 
     public override void Exit()

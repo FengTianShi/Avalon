@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2b841d7266c1e4a88aa43901822401, type: 3}
   m_Name: WarriorStateRun
   m_EditorClassIdentifier: 
-  stateName: Run
-  transitionDuration: 0
-  runSpeed: 10
-  acceleration: 40
+  StateName: Run
+  TransitionDuration: 0
+  RunSpeed: 10
+  Acceleration: 40

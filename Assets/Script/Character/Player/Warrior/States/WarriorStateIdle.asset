@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1907c3c491345d9499175b2e7790779e, type: 3}
   m_Name: WarriorStateIdle
   m_EditorClassIdentifier: 
-  stateName: Idle
-  transitionDuration: 0
+  StateName: Idle
+  TransitionDuration: 0

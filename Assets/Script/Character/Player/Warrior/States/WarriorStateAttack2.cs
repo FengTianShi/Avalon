@@ -4,52 +4,52 @@ using UnityEngine;
 public class WarriorStateAttack2 : WarriorState
 {
     [SerializeField]
-    float enterSpeed;
+    float EnterSpeed;
 
     [SerializeField]
-    float deceleration;
+    float Deceleration;
 
-    private bool isContinueAttack;
+    private bool IsContinueAttack;
 
     public override void Enter()
     {
         base.Enter();
 
-        currentSpeed = enterSpeed;
+        CurrentSpeed = EnterSpeed;
 
-        isContinueAttack = false;
+        IsContinueAttack = false;
     }
 
     public override void LogicUpdate()
     {
-        currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
+        EnterSpeed = Mathf.MoveTowards(EnterSpeed, 0, Deceleration * Time.deltaTime);
 
-        if (input.Dash)
+        if (Input.IsDash)
         {
-            stateMachine.SwitchState(typeof(WarriorStateDash));
+            StateMachine.SwitchState(typeof(WarriorStateDash));
         }
 
-        if (input.Attack)
+        if (Input.IsAttack)
         {
-            isContinueAttack = true;
+            IsContinueAttack = true;
         }
 
         if (IsAnimationFinished)
         {
-            if (isContinueAttack)
+            if (IsContinueAttack)
             {
-                stateMachine.SwitchState(typeof(WarriorStateAttack3));
+                StateMachine.SwitchState(typeof(WarriorStateAttack3));
             }
             else
             {
-                stateMachine.SwitchState(typeof(WarriorStateIdle));
+                StateMachine.SwitchState(typeof(WarriorStateIdle));
             }
         }
     }
 
     public override void PhysicUpdate()
     {
-        warrior.Move(currentSpeed);
+        Character.Move(CurrentSpeed);
     }
 
     public override void Exit()

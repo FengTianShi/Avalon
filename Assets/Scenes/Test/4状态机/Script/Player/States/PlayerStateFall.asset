@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerStateFall
   m_EditorClassIdentifier: 
   stateName: Fall
-  transitionDuration: 0.1
+  transitionDuration: 0
   moveSpeed: 8

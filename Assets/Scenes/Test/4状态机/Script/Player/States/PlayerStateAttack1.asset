@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStateAttack1
   m_EditorClassIdentifier: 
   stateName: Attack1
-  transitionDuration: 0.1
+  transitionDuration: 0
   enterSpeed: 5
   deceleration: 40

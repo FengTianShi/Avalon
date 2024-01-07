@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerStateBrake
   m_EditorClassIdentifier: 
   stateName: Brake
-  transitionDuration: 0.1
+  transitionDuration: 0
   deceleration: 40

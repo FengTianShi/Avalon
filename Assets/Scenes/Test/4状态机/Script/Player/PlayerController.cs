@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        Application.targetFrameRate = 30;
+        // Application.targetFrameRate = 30;
 
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
         if (hit && hit.normal != Vector2.up)
         {
-            Slope = Vector2.Perpendicular(hit.normal).normalized;
+            Slope = -Vector2.Perpendicular(hit.normal).normalized;
         }
         else
         {
@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Slope != Vector2.zero)
         {
-            SetVelocity(speed * transform.localScale.x * -Slope);
+            SetVelocity(speed * transform.localScale.x * Slope);
         }
         else
         {

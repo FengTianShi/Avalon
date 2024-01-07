@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateName: Attack2
   TransitionDuration: 0
-  EnterSpeed: 5
+  EnterSpeed: 3
   Deceleration: 40

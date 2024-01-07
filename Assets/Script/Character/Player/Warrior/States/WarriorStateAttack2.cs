@@ -22,7 +22,7 @@ public class WarriorStateAttack2 : WarriorState
 
     public override void LogicUpdate()
     {
-        EnterSpeed = Mathf.MoveTowards(EnterSpeed, 0, Deceleration * Time.deltaTime);
+        CurrentSpeed = Mathf.MoveTowards(CurrentSpeed, 0, Deceleration * Time.deltaTime);
 
         if (Player.Input.IsDash)
         {

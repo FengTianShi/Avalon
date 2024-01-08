@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   GroundCheckRayNumber: 10
   GroundCheckDistance: 0.3
   CeilingCheckRayNumber: 5
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   GroundCheckRayNumber: 10
   GroundCheckDistance: 0.3
   CeilingCheckRayNumber: 5
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 414689940}
   - component: {fileID: 414689942}
   - component: {fileID: 414689941}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 466606731}
   - component: {fileID: 466606730}
   - component: {fileID: 466606732}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   - component: {fileID: 475633633}
   - component: {fileID: 475633632}
   - component: {fileID: 475633634}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Hexagon Flat-Top (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 504304419}
   - component: {fileID: 504304418}
   - component: {fileID: 504304420}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Hexagon Flat-Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 795351754}
   - component: {fileID: 795351753}
   - component: {fileID: 795351755}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1329,7 @@ Transform:
   m_GameObject: {fileID: 795351752}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33, y: -2.9, z: -0.11131843}
+  m_LocalPosition: {x: 33, y: -3.1, z: -0.11131843}
   m_LocalScale: {x: 8.495362, y: 1.9642015, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1411,7 +1411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 993375188}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Test Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 1073723161}
   - component: {fileID: 1073723160}
   - component: {fileID: 1073723162}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1523,7 +1523,7 @@ Transform:
   m_GameObject: {fileID: 1073723159}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.093823195, y: -3.187231, z: -0.11131843}
+  m_LocalPosition: {x: -1.8, y: -3.187231, z: -0.11131843}
   m_LocalScale: {x: 105.01206, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1589,7 +1589,7 @@ GameObject:
   - component: {fileID: 1087784132}
   - component: {fileID: 1087784131}
   - component: {fileID: 1087784133}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 1161143113}
   - component: {fileID: 1161143112}
   - component: {fileID: 1161143114}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Hexagon Pointed-Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1951,7 +1951,7 @@ Transform:
   m_GameObject: {fileID: 1161143111}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.61, y: -3.08, z: -0.11131843}
+  m_LocalPosition: {x: 44.61, y: -3.2, z: -0.11131843}
   m_LocalScale: {x: 7.4377, y: 6.6832, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2019,7 +2019,7 @@ GameObject:
   - component: {fileID: 1271988376}
   - component: {fileID: 1271988378}
   - component: {fileID: 1271988377}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2035,7 +2035,7 @@ Transform:
   m_GameObject: {fileID: 1271988375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.2987192, w: 0.9543411}
-  m_LocalPosition: {x: -30.7, y: 14.9, z: -0.11131843}
+  m_LocalPosition: {x: -30.15, y: 15.2, z: -0.11131843}
   m_LocalScale: {x: 27.68118, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2153,7 +2153,7 @@ GameObject:
   - component: {fileID: 1929932078}
   - component: {fileID: 1929932077}
   - component: {fileID: 1929932079}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Isometric Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2459,7 +2459,7 @@ GameObject:
   - component: {fileID: 2071038461}
   - component: {fileID: 2071038460}
   - component: {fileID: 2071038462}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

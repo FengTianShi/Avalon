@@ -194,7 +194,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -609502301
-  m_SortingLayer: -5
+  m_SortingLayer: -11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 314ab524f1aaabd4abbc204e3412c03b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -438,7 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508341011}
   - component: {fileID: 508341010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -933562603
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b33a67e152ba9874baaa29fb78a88176, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   GroundCheckRayNumber: 10
   GroundCheckDistance: 0.3
   CeilingCheckRayNumber: 5
@@ -1146,7 +1146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1448005949
-  m_SortingLayer: -4
+  m_SortingLayer: -10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1ae7c87513b648344874a4eac47b0915, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   GroundCheckRayNumber: 10
   GroundCheckDistance: 0.3
   CeilingCheckRayNumber: 5
@@ -1440,7 +1440,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -933562603
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9af6155f0828e394292c49265d37a1db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1646,7 +1646,7 @@ GameObject:
   - component: {fileID: 1560428849}
   - component: {fileID: 1560428848}
   - component: {fileID: 1560428850}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2858,7 +2858,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1561992459
-  m_SortingLayer: -6
+  m_SortingLayer: -12
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 000dc61c8bb12f04e8272a36e518e266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

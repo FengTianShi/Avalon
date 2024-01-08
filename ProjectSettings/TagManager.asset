@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background 5
+    uniqueID: 1983345927
+    locked: 0
+  - name: Background 4
+    uniqueID: 2708338581
+    locked: 0
   - name: Background 3
     uniqueID: 1561992459
     locked: 0
@@ -46,6 +52,24 @@ TagManager:
     locked: 0
   - name: Background 1
     uniqueID: 1448005949
+    locked: 0
+  - name: Back 9
+    uniqueID: 1786955565
+    locked: 0
+  - name: Back 8
+    uniqueID: 2710378873
+    locked: 0
+  - name: Back 7
+    uniqueID: 4034172179
+    locked: 0
+  - name: Back 6
+    uniqueID: 3561677445
+    locked: 0
+  - name: Back 5
+    uniqueID: 1277034149
+    locked: 0
+  - name: Back 4
+    uniqueID: 2763789685
     locked: 0
   - name: Back 3
     uniqueID: 2175737941
@@ -58,6 +82,18 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Front 9
+    uniqueID: 589286799
+    locked: 0
+  - name: Front 8
+    uniqueID: 1109026981
+    locked: 0
+  - name: Front 7
+    uniqueID: 3839497101
+    locked: 0
+  - name: Front 6
+    uniqueID: 586818133
     locked: 0
   - name: Front 5
     uniqueID: 3361404693

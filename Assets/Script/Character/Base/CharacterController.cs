@@ -6,7 +6,11 @@ public class CharacterController : MonoBehaviour
 
     protected CapsuleCollider2D CC;
 
-    [Header("Setting")]
+    public int HP;
+
+    public int SP;
+
+    public int MP;
 
     [SerializeField]
     protected LayerMask GroundLayer;
@@ -25,8 +29,6 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField]
     protected float SlopeCheckDistance;
-
-    [Header("Info")]
 
     public bool IsGrounded;
 
@@ -161,6 +163,11 @@ public class CharacterController : MonoBehaviour
             isRight ? 1 : -1,
             transform.localScale.y,
             transform.localScale.z);
+    }
+
+    public virtual void SetFacing(Transform target)
+    {
+        SetFacing(target.position.x > transform.position.x);
     }
 
     public virtual void Move(float speed)

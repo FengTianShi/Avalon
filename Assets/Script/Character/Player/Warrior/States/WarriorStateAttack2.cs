@@ -9,7 +9,7 @@ public class WarriorStateAttack2 : WarriorState
     [SerializeField]
     float Deceleration;
 
-    private bool IsContinueAttack;
+    bool IsContinueAttack;
 
     public override void Enter()
     {

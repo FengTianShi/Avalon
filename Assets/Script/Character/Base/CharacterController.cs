@@ -40,7 +40,7 @@ public class CharacterController : MonoBehaviour
 
     public float YSpeed => RB.velocity.y;
 
-    public bool FacingRight => transform.localScale.x > 0;
+    public bool IsFacingRight => transform.localScale.x > 0;
 
     protected virtual void Awake()
     {

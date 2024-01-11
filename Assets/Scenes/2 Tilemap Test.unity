@@ -816,6 +816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f39f572df94cb48b56eb3ddc12129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
+  SP: 0
+  MP: 0
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1181,7 +1184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1188537675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,6 +1213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dede50e0822fa47b585a6d07e2c30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
+  SP: 0
+  MP: 0
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1378,7 +1384,7 @@ Transform:
   m_GameObject: {fileID: 1188537674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.02, y: -3.47, z: 0}
+  m_LocalPosition: {x: -6.55, y: -3.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2877,8 +2883,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 278604192}
   - {fileID: 1361441270}
-  - {fileID: 508341011}
   - {fileID: 837788126}
+  - {fileID: 508341011}
   - {fileID: 960030665}
   - {fileID: 940112823}
   - {fileID: 1232825010}

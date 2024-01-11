@@ -21,10 +21,16 @@ public class SkeletonStateIdle : SkeletonState
         {
             StateMachine.SwitchState(typeof(SkeletonStatePatrol));
         }
+
+        if (Enemy.Target != null)
+        {
+            StateMachine.SwitchState(typeof(SkeletonStateReact));
+        }
     }
 
     public override void PhysicUpdate()
     {
+        Enemy.Stop();
     }
 
     public override void Exit()

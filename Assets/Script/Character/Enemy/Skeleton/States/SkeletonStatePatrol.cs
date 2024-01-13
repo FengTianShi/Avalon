@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SkeletonStatePatrol", menuName = "Data/StateMachine/SkeletonState/Patrol")]
@@ -7,23 +6,20 @@ public class SkeletonStatePatrol : SkeletonState
     [SerializeField]
     float MoveSpeed;
 
-    [SerializeField]
-    float PatrolCheckDistance = 0.1f;
-
     Transform PatrolPoint;
 
     public override void Enter()
     {
         base.Enter();
 
-        PatrolPoint = Enemy.GetCurrentPatrolPoint();
+        PatrolPoint = Enemy.GetPatrolPoint();
     }
 
     public override void LogicUpdate()
     {
         float positionX = Enemy.transform.position.x;
 
-        if (Mathf.Abs(PatrolPoint.position.x - positionX) <= PatrolCheckDistance)
+        if (Mathf.Abs(PatrolPoint.position.x - positionX) <= 0.1f)
         {
             StateMachine.SwitchState(typeof(SkeletonStateIdle));
         }

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SkeletonStateReact", menuName = "Data/StateMachine/SkeletonState/React")]

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : CharacterController
@@ -8,7 +7,7 @@ public class EnemyController : CharacterController
 
     protected int PatrolPointIndex;
 
-    public Transform GetCurrentPatrolPoint()
+    public Transform GetPatrolPoint()
     {
         if (PatrolPointIndex >= PatrolPoints.Count)
         {
@@ -29,20 +28,6 @@ public class EnemyController : CharacterController
     public float PlayerCheckDistance;
 
     public int PlayerCheckAngle;
-
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Target == null)
-        {
-            CheckPlayer(PlayerCheckDistance, PlayerCheckAngle);
-        }
-        else
-        {
-            CheckPlayer(PlayerCheckDistance * 2, 180);
-        }
-    }
 
     protected virtual void CheckPlayer(float playerCheckDistance, int playerCheckAngle)
     {
@@ -89,5 +74,29 @@ public class EnemyController : CharacterController
         }
 
         Target = null;
+    }
+
+    public Transform ChasePointTop;
+
+    public Transform ChasePointBottom;
+
+    public Transform ChasePointRight;
+
+    public Transform ChasePointLeft;
+
+    public ChaseRange ChaseRange => new(ChasePointTop, ChasePointBottom, ChasePointRight, ChasePointLeft);
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (Target == null)
+        {
+            CheckPlayer(PlayerCheckDistance, PlayerCheckAngle);
+        }
+        else
+        {
+            CheckPlayer(PlayerCheckDistance * 2, 180);
+        }
     }
 }

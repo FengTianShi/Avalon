@@ -6,12 +6,6 @@ public class CharacterController : MonoBehaviour
 
     protected CapsuleCollider2D CC;
 
-    public int HP;
-
-    public int SP;
-
-    public int MP;
-
     [SerializeField]
     protected LayerMask GroundLayer;
 
@@ -21,20 +15,26 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     protected float GroundCheckDistance;
 
+    public bool IsGrounded;
+
     [SerializeField]
     protected int CeilingCheckRayNumber;
 
     [SerializeField]
     protected float CeilingCheckDistance;
 
+    public bool IsCeiling;
+
     [SerializeField]
     protected float SlopeCheckDistance;
 
-    public bool IsGrounded;
-
-    public bool IsCeiling;
-
     public Vector2 Slope;
+
+    public int HP;
+
+    public int SP;
+
+    public int MP;
 
     public float XSpeed => RB.velocity.x;
 
@@ -71,7 +71,7 @@ public class CharacterController : MonoBehaviour
                 checkDistance,
                 GroundLayer);
 
-            Debug.DrawRay(origin, Vector2.down * checkDistance, Color.blue);
+            Debug.DrawRay(origin, Vector2.down * checkDistance, Color.green);
 
             if (hit)
             {
@@ -99,7 +99,7 @@ public class CharacterController : MonoBehaviour
                 checkDistance,
                 GroundLayer);
 
-            Debug.DrawRay(origin, Vector2.up * checkDistance, Color.green);
+            Debug.DrawRay(origin, Vector2.up * checkDistance, Color.blue);
 
             if (hit)
             {

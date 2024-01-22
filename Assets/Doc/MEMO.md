@@ -1,11 +1,12 @@
 Unity项目
 
 学习：
+像素画
 输入系统
+Cinema(Cinemachine)
+动画
+碰撞检测,射线检测
 FSM
-Cinemachine
-动画 CrossFade
-碰撞检测 射线检测
 行为树
 
 问题：
